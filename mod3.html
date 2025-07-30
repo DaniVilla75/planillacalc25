@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Fórmulas y Funciones</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f9ff;
+            position: relative;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #9b59b6;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #8e44ad;
+            margin-top: 30px;
+            border-left: 5px solid #9b59b6;
+            padding-left: 10px;
+        }
+        
+        .objetivos {
+            background-color: #f5eef8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .concept-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        .analogia {
+            font-style: italic;
+            background-color: #f4ecf7;
+            padding: 10px;
+            border-left: 4px solid #9b59b6;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #8e44ad;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .actividad {
+            background-color: #e8daef;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .paso {
+            margin-bottom: 10px;
+            counter-increment: step-counter;
+        }
+        
+        .paso::before {
+            content: counter(step-counter);
+            background-color: #8e44ad;
+            color: white;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .formula {
+            font-family: monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            border-left: 3px solid #8e44ad;
+        }
+        
+        .ejemplo {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+        
+        .consejo {
+            background-color: #e8daef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #9b59b6;
+        }
+        
+        .error-comun {
+            background-color: #fdedec;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .recursos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .recurso {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            width: 28%;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .recurso {
+                width: 100%;
+            }
+        }
+        
+        .evaluacion {
+            background-color: #fef9e7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .faq {
+            margin: 20px 0;
+        }
+        
+        .pregunta {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .respuesta {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #8e44ad;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #9b59b6;
+        }
+        
+        .btn-volver {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .flotante {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #8e44ad;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        
+        .flotante:hover {
+            background-color: #9b59b6;
+            transform: scale(1.1);
+        }
+        
+        .funcion {
+            background-color: #f4ecf7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .sintaxis {
+            font-weight: bold;
+            color: #8e44ad;
+        }
+        
+        .comparativa {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .referencia {
+            width: 48%;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="manual.html" class="flotante" title="Manual de Referencia">?</a>
+    
+    <h1>🧠 Módulo 3: Fórmulas y Funciones Avanzadas</h1>
+    
+    <div class="objetivos">
+        <h2>🎯 Objetivos de Aprendizaje</h2>
+        <p>Al finalizar este módulo, serás capaz de:</p>
+        <ol>
+            <li>Utilizar funciones estadísticas básicas para analizar datos</li>
+            <li>Aplicar lógica condicional con la función SI()</li>
+            <li>Calcular aumentos y descuentos porcentuales</li>
+            <li>Diferenciar entre referencias absolutas y relativas</li>
+            <li>Crear un sistema de calificaciones automatizado</li>
+        </ol>
+    </div>
+    
+    <div class="consejo">
+        <strong>Conectando con lo aprendido:</strong> En el módulo 2 dominaste operaciones básicas. Ahora potenciaremos tus habilidades con funciones integradas y lógica condicional.
+    </div>
+    
+    <h2>📊 Funciones Estadísticas Básicas</h2>
+    
+    <div class="funcion">
+        <h3>PROMEDIO() - El termómetro de tus datos</h3>
+        <p><span class="sintaxis">Sintaxis:</span> <span class="formula">=PROMEDIO(rango)</span></p>
+        <p><strong>¿Qué hace?</strong> Calcula el valor medio de un conjunto de números.</p>
+        
+        <div class="ejemplo">
+            <strong>Ejemplo práctico:</strong><br>
+            <span class="formula">=PROMEDIO(B2:B10)</span> → Calcula la nota media de los estudiantes
+        </div>
+        
+        <div class="analogia">
+            <strong>Analogía:</strong> "Imagina que todos los valores se reparten equitativamente. Si tienes 3 estudiantes con notas 4, 5 y 6, el promedio 5 significa que todos tendrían la misma nota si se distribuyera el conocimiento por igual."
+        </div>
+    </div>
+    
+    <div class="funcion">
+        <h3>MAX() y MIN() - Los extremos reveladores</h3>
+        <p><span class="sintaxis">Sintaxis:</span> <span class="formula">=MAX(rango)</span> / <span class="formula">=MIN(rango)</span></p>
+        <p><strong>¿Qué hacen?</strong> Identifican los valores máximo y mínimo en un conjunto.</p>
+        
+        <div class="ejemplo">
+            <strong>Ejemplo aplicado:</strong><br>
+            <span class="formula">=MAX(C2:C20)</span> → Muestra la venta más alta del mes<br>
+            <span class="formula">=MIN(D2:D15)</span> → Encuentra la temperatura mínima registrada
+        </div>
+    </div>
+    
+    <div class="funcion">
+        <h3>CONTAR() - El censo de tus datos</h3>
+        <p><span class="sintaxis">Sintaxis:</span> <span class="formula">=CONTAR(rango)</span></p>
+        <p><strong>¿Qué hace?</strong> Cuenta cuántas celdas en un rango contienen números.</p>
+        
+        <div class="error-comun">
+            <strong>¡Cuidado!</strong> CONTAR() solo considera valores numéricos. Para contar cualquier tipo de dato usa <span class="formula">=CONTARA()</span>
+        </div>
+    </div>
+    
+    <div class="consejo">
+        <strong>Consejo profesional:</strong> Combina estas funciones para análisis rápidos:<br>
+        <span class="formula">=MIN(A1:A10) & " - " & MAX(A1:A10)</span> → Muestra el rango completo (ej: "3 - 9")
+    </div>
+    
+    <h2>🔀 La Función SI() - Toma de Decisiones Automatizada</h2>
+    
+    <div class="concept-box">
+        <p><span class="sintaxis">Sintaxis completa:</span> <span class="formula">=SI(prueba_lógica; valor_si_verdadero; valor_si_falso)</span></p>
+        
+        <div class="analogia">
+            <strong>Analogía:</strong> "La función SI() es como un semáforo inteligente. Evalúa una condición (luz roja) y decide qué acción tomar (detenerse) o alternativa (avanzar)."
+        </div>
+        
+        <h3>Ejemplos prácticos para estudiantes:</h3>
+        
+        <div class="ejemplo">
+            <strong>Aprobado/Reprobado:</strong><br>
+            <span class="formula">=SI(B2>=6; "Aprobado"; "Reprobado")</span>
+        </div>
+        
+        <div class="ejemplo">
+            <strong>Descuento por cantidad:</strong><br>
+            <span class="formula">=SI(C2>100; B2*0.9; B2)</span> → Aplica 10% descuento si compra más de 100 unidades
+        </div>
+        
+        <div class="error-comun">
+            <strong>Error común:</strong> Olvidar las comillas en textos ("Aprobado") o usar punto y coma incorrectamente. La sintaxis exacta depende de la configuración regional.
+        </div>
+    </div>
+    
+    <h2>📈 Cálculos Porcentuales: Descuentos y Aumentos</h2>
+    
+    <div class="concept-box">
+        <h3>Fórmulas clave:</h3>
+        
+        <p><strong>Descuento del 15%:</strong> <span class="formula">=A1*(1-0.15)</span> o <span class="formula">=A1*0.85</span></p>
+        <p><strong>Aumento del 10%:</strong> <span class="formula">=A1*(1+0.10)</span> o <span class="formula">=A1*1.10</span></p>
+        
+        <div class="analogia">
+            <strong>Explicación conceptual:</strong> "Multiplicar por (1 ± porcentaje) es como ajustar el 100% del valor original. Un descuento del 15% deja el 85% (0.85), mientras que un aumento del 10% lo lleva al 110% (1.10)."
+        </div>
+        
+        <div class="ejemplo">
+            <strong>Ejemplo combinado con SI():</strong><br>
+            <span class="formula">=SI(B2>"01/01/2023"; A2*1.05; A2)</span> → Aumento del 5% para precios después de cierta fecha
+        </div>
+    </div>
+    
+    <h2>🔗 Referencias: Absolutas vs. Relativas</h2>
+    
+    <div class="comparativa">
+        <div class="referencia">
+            <h3>Referencias Relativas</h3>
+            <p><span class="formula">=A1+B1</span></p>
+            <p><strong>Comportamiento:</strong> Se ajusta al copiarse</p>
+            <p><strong>Uso típico:</strong> Cálculos que se repiten en cada fila</p>
+            <div class="ejemplo">
+                Copiar <span class="formula">=A1*B1</span> de C1 a C2 se convierte en <span class="formula">=A2*B2</span>
+            </div>
+        </div>
+        
+        <div class="referencia">
+            <h3>Referencias Absolutas</h3>
+            <p><span class="formula">=$A$1+$B$1</span></p>
+            <p><strong>Comportamiento:</strong> Permanece fija al copiarse</p>
+            <p><strong>Uso típico:</strong> Valores constantes (tasas, factores)</p>
+            <div class="ejemplo">
+                Copiar <span class="formula">=A1*$B$1</span> de C1 a C2 se convierte en <span class="formula">=A2*$B$1</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="consejo">
+        <strong>Truco rápido:</strong> Presiona F4 al editar una fórmula para alternar entre referencia relativa (A1), absoluta ($A$1) y mixta (A$1 o $A1).
+    </div>
+    
+    <div class="actividad">
+        <h2>✍️ Actividad Práctica: Sistema de Calificaciones</h2>
+        <p><strong>Objetivo:</strong> Crear un sistema que calcule promedios y determine automáticamente si un estudiante aprueba.</p>
+        
+        <div class="paso">Crea una nueva hoja llamada "Calificaciones"</div>
+        <div class="paso">Configura las columnas: A (Nombre), B-D (Notas), E (Promedio), F (Estado)</div>
+        <div class="paso">Ingresa datos de 5 estudiantes ficticios con 3 notas cada uno</div>
+        <div class="paso">En la columna E (Promedio), usa <span class="formula">=PROMEDIO(B2:D2)</span></div>
+        <div class="paso">En la columna F (Estado), aplica <span class="formula">=SI(E2>=6; "Aprobado"; "Reprobado")</span></div>
+        <div class="paso">Calcula el promedio general con <span class="formula">=PROMEDIO(E2:E6)</span></div>
+        <div class="paso">Identifica la nota máxima con <span class="formula">=MAX(E2:E6)</span></div>
+        
+        <div class="consejo">
+            <strong>Reto avanzado:</strong>
+            <ul>
+                <li>Añade una columna "Bonificación" que sume 0.5 si el promedio está entre 5.0 y 5.9</li>
+                <li>Crea un sistema de categorías (Excelente ≥9, Bueno ≥7, etc.) usando SI() anidados</li>
+                <li>Experimenta con referencias absolutas para aplicar diferentes pesos a cada nota</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="evaluacion">
+        <h2>📝 Evaluación de Comprensión</h2>
+        <ol>
+            <li><strong>Ejercicio práctico:</strong> Crea una tabla de productos con precios y aplica:
+                <ul>
+                    <li>15% descuento a los que tengan más de 100 unidades en stock</li>
+                    <li>10% aumento a los que tengan menos de 20 unidades</li>
+                </ul>
+            </li>
+            <li><strong>Pregunta conceptual:</strong> Explica con tus palabras la diferencia entre referencia absoluta y relativa</li>
+            <li><strong>Problema para resolver:</strong> Dada la fórmula <span class="formula">=SI(PROMEDIO(B2:F2)>=5; SI(PROMEDIO(B2:F2)>=7; "Bueno"; "Regular"); "Deficiente")</span>, describe qué categorías asigna y con qué notas</li>
+            <li><strong>Autoevaluación:</strong> Marca lo que lograste:
+                <ul style="list-style-type: none;">
+                    <li><input type="checkbox"> Puedo usar funciones estadísticas básicas</li>
+                    <li><input type="checkbox"> Comprendo y aplico la función SI()</li>
+                    <li><input type="checkbox"> Diferencio referencias absolutas y relativas</li>
+                    <li><input type="checkbox"> Puedo crear un sistema de calificaciones automatizado</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    
+    <h2>📚 Recursos Adicionales</h2>
+    <div class="recursos">
+        <div class="recurso">
+            <h3>Video Tutorial</h3>
+            <p>"Domina la función SI en 7 minutos"</p>
+        </div>
+        <div class="recurso">
+            <h3>Hoja de Referencia</h3>
+            <p>"Guía de Funciones Esenciales"</p>
+        </div>
+        <div class="recurso">
+            <h3>Plantilla Descargable</h3>
+            <p>"Sistema de Calificaciones Automatizado"</p>
+        </div>
+    </div>
+    
+    <h2>🤔 Preguntas Frecuentes</h2>
+    <div class="faq">
+        <div class="pregunta">Q: ¿Puedo anidar múltiples funciones SI()?</div>
+        <div class="respuesta">R: Sí, pero después de 3-4 niveles se vuelve complejo. En esos casos considera usar BUSCARV() o IFS() (disponible en versiones recientes).</div>
+        
+        <div class="pregunta">Q: ¿Cómo aplico diferentes porcentajes según rangos?</div>
+        <div class="respuesta">R: Puedes anidar funciones SI() o usar BUSCARV con una tabla de referencia. Ejemplo: <span class="formula">=SI(A1>100; 0.2; SI(A1>50; 0.15; 0.1))</span></div>
+        
+        <div class="pregunta">Q: ¿Por qué mi referencia absoluta no funciona al copiar?</div>
+        <div class="respuesta">R: Verifica que usaste $ en ambas partes (columna y fila). <span class="formula">A$1</span> fija solo la fila, <span class="formula">$A1</span> fija solo la columna.</div>
+    </div>
+    
+    <div class="btn-volver">
+        <a href="index.html" class="btn">Volver al Inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Planillas de Cálculo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f9ff;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+        
+        .objetivos {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .objetivos li {
+            margin-bottom: 8px;
+        }
+        
+        .concept-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        .analogia {
+            font-style: italic;
+            background-color: #fffde7;
+            padding: 10px;
+            border-left: 4px solid #ffd600;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .actividad {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .paso {
+            margin-bottom: 10px;
+            counter-increment: step-counter;
+        }
+        
+        .paso::before {
+            content: counter(step-counter);
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .evaluacion {
+            background-color: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .faq {
+            margin: 20px 0;
+        }
+        
+        .pregunta {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .respuesta {
+            margin-bottom: 15px;
+        }
+        
+        .consejo {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+        }
+        
+        .recursos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .recurso {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            width: 28%;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .recurso {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📘 Introducción a las Planillas de Cálculo</h1>
+    
+    <div class="objetivos">
+        <h2>🌟 Objetivos de Aprendizaje</h2>
+        <p>Al finalizar esta unidad, serás capaz de:</p>
+        <ol>
+            <li>Definir qué es una planilla de cálculo con tus propias palabras</li>
+            <li>Identificar al menos 5 usos cotidianos y profesionales</li>
+            <li>Reconocer los elementos principales de la interfaz</li>
+            <li>Crear tu primera planilla básica con formato</li>
+        </ol>
+    </div>
+    
+    <h2>🧠 Conceptos Fundamentales</h2>
+    
+    <div class="concept-box">
+        <h3>📊 ¿Qué es una planilla de cálculo?</h3>
+        <p><strong>Definición pedagógica:</strong> Imagina un cuaderno digital infinito con filas y columnas donde puedes organizar números, textos y hacer cálculos automáticos. ¡Como una calculadora superpoderosa!</p>
+        
+        <p><strong>Ejemplo visual:</strong></p>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>Ingresos</th>
+                <th>Gastos</th>
+                <th>Ahorro</th>
+            </tr>
+            <tr>
+                <td>Enero</td>
+                <td>$1,200</td>
+                <td>$900</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>Febrero</td>
+                <td>$1,300</td>
+                <td>$850</td>
+                <td>$450</td>
+            </tr>
+        </table>
+        
+        <div class="analogia">
+            <strong>Analogía:</strong> "Es como un Lego digital - cada celda es un bloque que puedes combinar para construir desde listas simples hasta complejos informes financieros."
+        </div>
+    </div>
+    
+    <div class="concept-box">
+        <h3>🛠 Usos comunes (con ejemplos reales)</h3>
+        <p><strong>Vida cotidiana:</strong></p>
+        <ul>
+            <li>Presupuesto familiar 📊</li>
+            <li>Lista de compras 🛒</li>
+            <li>Planificador de estudios 📚</li>
+        </ul>
+        
+        <p><strong>Ámbito profesional:</strong></p>
+        <ul>
+            <li>Informes de ventas 💼</li>
+            <li>Control de inventario 🏷️</li>
+            <li>Análisis de datos científicos 🔬</li>
+        </ul>
+        
+        <div class="consejo">
+            <strong>Dato curioso:</strong> ¡El 80% de los trabajos administrativos usan planillas de cálculo diariamente!
+        </div>
+    </div>
+    
+    <h2>💻 Programas más populares</h2>
+    <table>
+        <tr>
+            <th>Programa</th>
+            <th>Costo</th>
+            <th>Ventaja</th>
+            <th>Ideal para</th>
+        </tr>
+        <tr>
+            <td>Excel</td>
+            <td>Pago</td>
+            <td>Funciones avanzadas</td>
+            <td>Empresas</td>
+        </tr>
+        <tr>
+            <td>Google Sheets</td>
+            <td>Gratis</td>
+            <td>Colaboración en tiempo real</td>
+            <td>Estudiantes</td>
+        </tr>
+        <tr>
+            <td>OpenOffice Calc</td>
+            <td>Gratis</td>
+            <td>Código abierto</td>
+            <td>Usuarios técnicos</td>
+        </tr>
+    </table>
+    
+    <div class="consejo">
+        <strong>Recomendación inicial:</strong> Empezaremos con Google Sheets por su accesibilidad.
+    </div>
+    
+    <h2>🧩 Anatomía de una planilla</h2>
+    
+    <div class="concept-box">
+        <h3>🔍 Componentes básicos (con metáforas)</h3>
+        <ol>
+            <li><strong>Celda:</strong> Como un cuadradito de tu cuaderno (ej: A1)</li>
+            <li><strong>Fila:</strong> Horizontal, como el piso de un edificio (fila 1)</li>
+            <li><strong>Columna:</strong> Vertical, como los ascensores del edificio (columna A)</li>
+            <li><strong>Hoja:</strong> Cada pestaña es como una página diferente</li>
+        </ol>
+        <p>Visualiza estos componentes en la imagen interactiva:</p>
+        <iframe src="https://h5p.org/h5p/embed/1506432" width="1090" height="723" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="Excel Información básica"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+        
+        <div class="consejo">
+            <strong>Visualización interactiva:</strong> [Imagen interactiva donde al pasar el mouse se iluminen los componentes]
+        </div>
+    </div>
+    
+    <h2>🖥️ Navegando la interfaz (Guía paso a paso)</h2>
+    
+    <div class="concept-box">
+        <ol>
+            <li><strong>Barra de menús:</strong> El "tablero de control"</li>
+            <li><strong>Barra de herramientas:</strong> Tus "útiles escolares digitales"</li>
+            <li><strong>Área de trabajo:</strong> Donde ocurre la magia</li>
+            <li><strong>Barra de fórmulas:</strong> El "traductor matemático"</li>
+        </ol>
+        
+        <div class="consejo">
+            <strong>Consejo:</strong> ¡Personaliza tu vista! Puedes:
+            <ul>
+                <li>Congelar paneles (Ver > Congelar)</li>
+                <li>Cambiar colores (Formato > Tema)</li>
+                <li>Zoom para mejor visualización</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="actividad">
+        <h2>✍️ Actividad Práctica Guiada</h2>
+        <p><strong>Objetivo:</strong> Crear tu primera base de datos personal</p>
+        
+        <div class="paso">Abre Google Sheets (sheets.google.com)</div>
+        <div class="paso">Nombra tu hoja: "Mis Datos" (haz clic en "Hoja sin título")</div>
+        <div class="paso">En la celda A1 escribe "Nombre", B1 "Edad", C1 "Ciudad"</div>
+        <div class="paso">Completa con tus datos en la fila 2</div>
+        <div class="paso">Aplica formato:
+            <ul>
+                <li>Selecciona las celdas A1:C1</li>
+                <li>Haz clic en "B" para negrita</li>
+                <li>Elige un color de relleno</li>
+            </ul>
+        </div>
+        <div class="paso">Ajusta el ancho de columnas (arrastra el borde entre letras)</div>
+        
+        <div class="consejo">
+            <strong>Reto adicional:</strong>
+            <ul>
+                <li>Añade bordes a tu tabla</li>
+                <li>Prueba cambiar el tipo de letra</li>
+                <li>Inserta una nota en tu celda de edad (clic derecho > Insertar nota)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="evaluacion">
+        <h2>🧠 Evaluación de comprensión</h2>
+        <ol>
+            <li><strong>Pregunta reflexiva:</strong> ¿En qué se parece y diferencia una planilla de cálculo de una tabla en Word?</li>
+            <li><strong>Ejercicio práctico:</strong> Crea una nueva hoja con 3 compañeros imaginarios usando diferentes formatos.</li>
+            <li><strong>Autoevaluación:</strong> Marca los conceptos que dominas:
+                <ul style="list-style-type: none;">
+                    <li><input type="checkbox"> Reconozco la barra de fórmulas</li>
+                    <li><input type="checkbox"> Puedo nombrar una hoja</li>
+                    <li><input type="checkbox"> Sé aplicar formato básico</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    
+    <h2>📚 Recursos Adicionales</h2>
+    <div class="recursos">
+        <div class="recurso">
+            <h3>Video tutorial</h3>
+            <p>"Primeros pasos en Hojas de Cálculo" (5 min)</p>
+        </div>
+        <div class="recurso">
+            <h3>Infografía</h3>
+            <p>"Evolución histórica de las planillas"</p>
+        </div>
+        <div class="recurso">
+            <h3>Plantilla descargable</h3>
+            <p>"Mi primera planilla de práctica"</p>
+        </div>
+    </div>
+    
+    <h2>🤔 Preguntas Frecuentes de Estudiantes</h2>
+    <div class="faq">
+        <div class="pregunta">Q: ¿Puedo usar planillas en mi teléfono?</div>
+        <div class="respuesta">R: ¡Sí! Todas las opciones mencionadas tienen apps móviles, aunque para aprender recomiendo empezar en computadora.</div>
+        
+        <div class="pregunta">Q: ¿Qué pasa si cometo un error?</div>
+        <div class="respuesta">R: Usa Ctrl+Z (Cmd+Z en Mac) para deshacer. ¡Las planillas son muy flexibles!</div>
+        
+        <div class="pregunta">Q: ¿Necesito saber matemáticas avanzadas?</div>
+        <div class="respuesta">R: Solo lo básico. La planilla hace los cálculos por ti.</div>
+    </div>
+    
+    <div class="consejo">
+        💡 <strong>Consejo final:</strong> Practica 15 minutos diarios esta semana. ¡La constancia es clave! ¿Qué te gustaría aprender en la próxima clase?
+    </div>
+</body>
+</html>

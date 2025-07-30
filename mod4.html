@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final: Administración Rural</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f9ff;
+            position: relative;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #16a085;
+            margin-top: 30px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+        }
+        
+        .objetivos {
+            background-color: #e8f8f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .escenario {
+            background-color: #e8f6f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #1abc9c;
+        }
+        
+        .datos-actuales {
+            background-color: #d5f5e3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .concept-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #16a085;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .actividad {
+            background-color: #d4efdf;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .paso {
+            margin-bottom: 10px;
+            counter-increment: step-counter;
+        }
+        
+        .paso::before {
+            content: counter(step-counter);
+            background-color: #16a085;
+            color: white;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .formula {
+            font-family: monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            border-left: 3px solid #16a085;
+        }
+        
+        .consejo {
+            background-color: #d5f5e3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .flotante {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #16a085;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        
+        .flotante:hover {
+            background-color: #1abc9c;
+            transform: scale(1.1);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #16a085;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1abc9c;
+        }
+        
+        .btn-volver {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .grafico {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        .grafico img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+        
+        .evaluacion {
+            background-color: #fef9e7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .recursos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .recurso {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            width: 28%;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .recurso {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="manual.html" class="flotante" title="Manual de Referencia">?</a>
+    
+    <h1>🌱 Proyecto Final: Administración Rural Argentina 2025</h1>
+    
+    <div class="objetivos">
+        <h2>🎯 Objetivos del Proyecto</h2>
+        <p>Al completar este proyecto, podrás:</p>
+        <ol>
+            <li>Integrar todos los conocimientos del curso en un caso real</li>
+            <li>Analizar datos actuales del mercado agropecuario argentino</li>
+            <li>Tomar decisiones basadas en cálculos financieros</li>
+            <li>Visualizar información mediante gráficos profesionales</li>
+            <li>Optimizar la gestión de un establecimiento rural</li>
+        </ol>
+    </div>
+    
+    <div class="escenario">
+        <h2>🏞 Escenario: Establecimiento "Los Algarrobos"</h2>
+        <p>Administrarás un campo mixto de 500 hectáreas en la provincia de Córdoba con:</p>
+        <ul>
+            <li><strong>Agricultura:</strong> 300 ha de soja, 100 ha de maíz y 50 ha de trigo</li>
+            <li><strong>Ganadería:</strong> 150 cabezas de bovinos para cría</li>
+            <li><strong>Infraestructura:</strong> Galpón, silos y corrales</li>
+        </ul>
+        <p>Tu objetivo es maximizar la rentabilidad en el actual contexto económico argentino.</p>
+    </div>
+    
+    <div class="datos-actuales">
+        <h2>📊 Datos Actualizados del Mercado Argentino (2025)</h2>
+        <table>
+            <tr>
+                <th>Concepto</th>
+                <th>Valor</th>
+                <th>Fuente</th>
+            </tr>
+            <tr>
+                <td>Precio soja (ton)</td>
+                <td>$95,000</td>
+                <td>Bolsa de Cereales</td>
+            </tr>
+            <tr>
+                <td>Precio maíz (ton)</td>
+                <td>$68,000</td>
+                <td>Mercado de Rosario</td>
+            </tr>
+            <tr>
+                <td>Precio trigo (ton)</td>
+                <td>$78,000</td>
+                <td>Bolsa de Comercio</td>
+            </tr>
+            <tr>
+                <td>Precio novillo ($/kg)</td>
+                <td>$1,200</td>
+                <td>Mercado de Liniers</td>
+            </tr>
+            <tr>
+                <td>Costo fertilizantes (ha)</td>
+                <td>$35,000</td>
+                <td>Cámara de Agroinsumos</td>
+            </tr>
+            <tr>
+                <td>Retenciones soja</td>
+                <td>25%</td>
+                <td>AFIP</td>
+            </tr>
+            <tr>
+                <td>Tipo de cambio oficial</td>
+                <td>$450/USD</td>
+                <td>BCRA</td>
+            </tr>
+        </table>
+    </div>
+    
+    <h2>📈 Módulos de la Planilla de Gestión</h2>
+    
+    <div class="concept-box">
+        <h3>1. Cálculo de Rentabilidad por Cultivo</h3>
+        <p>Fórmulas clave:</p>
+        <ul>
+            <li><strong>Ingresos brutos:</strong> <span class="formula">=Producción(ton) * Precio(ton)</span></li>
+            <li><strong>Retenciones:</strong> <span class="formula">=Ingresos * %Retenciones</span></li>
+            <li><strong>Costos directos:</strong> <span class="formula">=Sup(ha) * (Semilla+Fertilizante+Agroquímico)</span></li>
+            <li><strong>Margen agrícola:</strong> <span class="formula">=Ingresos - Retenciones - Costos</span></li>
+        </ul>
+        
+        <div class="consejo">
+            <strong>Dato actual:</strong> En 2025, los rendimientos promedio en Córdoba son 3.2 ton/ha para soja, 7.5 ton/ha para maíz y 3.8 ton/ha para trigo.
+        </div>
+    </div>
+    
+    <div class="concept-box">
+        <h3>2. Análisis Ganadero</h3>
+        <p>Variables a considerar:</p>
+        <ul>
+            <li>Tasa de parición: 65% (promedio regional)</li>
+            <li>Peso promedio de venta: 380 kg/animal</li>
+            <li>Costos sanitarios: $15,000 por cabeza/año</li>
+            <li>Suplementación invernal: $8,000 por cabeza</li>
+        </ul>
+        
+        <p>Fórmula de ingresos ganaderos:</p>
+        <p class="formula">=Cabezas * TasaParición * PesoVenta(kg) * Precio($/kg)</p>
+    </div>
+    
+    <div class="concept-box">
+        <h3>3. Costos Fijos y Variables</h3>
+        <table>
+            <tr>
+                <th>Concepto</th>
+                <th>Tipo</th>
+                <th>Valor Mensual</th>
+            </tr>
+            <tr>
+                <td>Personal</td>
+                <td>Fijo</td>
+                <td>$350,000</td>
+            </tr>
+            <tr>
+                <td>Alquiler maquinaria</td>
+                <td>Variable (por ha)</td>
+                <td>$12,000/ha</td>
+            </tr>
+            <tr>
+                <td>Impuestos</td>
+                <td>Fijo</td>
+                <td>$85,000</td>
+            </tr>
+            <tr>
+                <td>Mantenimiento</td>
+                <td>Variable</td>
+                <td>5% de ingresos</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="grafico">
+        <h3>📊 Ejemplo de Gráfico Esperado</h3>
+        <img src="https://via.placeholder.com/800x400?text=Ejemplo+de+Gráfico+de+Evolución+Financiera" alt="Gráfico de evolución financiera">
+        <p><em>Tu planilla deberá generar gráficos similares mostrando la evolución mensual</em></p>
+    </div>
+    
+    <div class="actividad">
+        <h2>🚜 Actividad: Construcción de la Planilla Completa</h2>
+        
+        <div class="paso">Crea una nueva hoja de cálculo llamada "Gestión_LosAlgarrobos"</div>
+        <div class="paso">Configura 5 pestañas: Resumen, Agricultura, Ganadería, Costos y Gráficos</div>
+        
+        <h3>Pestaña Agricultura</h3>
+        <div class="paso">Crea una tabla por cultivo con: superficie, rendimiento, producción, precio, ingresos, costos y margen</div>
+        <div class="paso">Aplica fórmulas para calcular automáticamente cada concepto</div>
+        <div class="paso">Incluye retenciones diferenciadas por cultivo</div>
+        
+        <h3>Pestaña Ganadería</h3>
+        <div class="paso">Registra inventario inicial, nacimientos, ventas y stock final</div>
+        <div class="paso">Calcula ingresos potenciales según precios actuales</div>
+        
+        <h3>Pestaña Costos</h3>
+        <div class="paso">Distingue entre costos fijos y variables</div>
+        <div class="paso">Calcula costos totales y costos por hectárea/cabeza</div>
+        
+        <h3>Pestaña Resumen</h3>
+        <div class="paso">Consolida resultados mensuales</div>
+        <div class="paso">Calcula indicadores clave: rentabilidad, margen neto, punto de equilibrio</div>
+        
+        <h3>Pestaña Gráficos</h3>
+        <div class="paso">Crea al menos 3 gráficos:
+            <ul>
+                <li>Evolución mensual de ingresos vs gastos</li>
+                <li>Composición de ingresos por actividad</li>
+                <li>Rendimiento por cultivo comparado con la región</li>
+            </ul>
+        </div>
+        
+        <div class="consejo">
+            <strong>Reto avanzado:</strong>
+            <ul>
+                <li>Agrega un escenario de precios bajos con variación del 20%</li>
+                <li>Crea un dashboard interactivo con filtros por período</li>
+                <li>Simula el efecto de aumentar el rodeo en 50 cabezas</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="evaluacion">
+        <h2>📋 Criterios de Evaluación</h2>
+        <table>
+            <tr>
+                <th>Elemento</th>
+                <th>Puntaje</th>
+                <th>Indicadores</th>
+            </tr>
+            <tr>
+                <td>Completitud</td>
+                <td>25%</td>
+                <td>Todos los módulos requeridos están presentes</td>
+            </tr>
+            <tr>
+                <td>Precisión</td>
+                <td>25%</td>
+                <td>Cálculos correctos con fórmulas apropiadas</td>
+            </tr>
+            <tr>
+                <td>Actualización</td>
+                <td>15%</td>
+                <td>Uso de datos reales 2025</td>
+            </tr>
+            <tr>
+                <td>Visualización</td>
+                <td>20%</td>
+                <td>Gráficos claros y relevantes</td>
+            </tr>
+            <tr>
+                <td>Análisis</td>
+                <td>15%</td>
+                <td>Conclusiones y recomendaciones basadas en datos</td>
+            </tr>
+        </table>
+        
+        <h3>Preguntas para el Informe Final</h3>
+        <ol>
+            <li>¿Qué actividad (agricultura/ganadería) mostró mejor rentabilidad? ¿Por qué?</li>
+            <li>¿Cómo afectan las retenciones a los resultados finales?</li>
+            <li>Si tuvieras que invertir $1.000.000, ¿en qué lo harías? Justifica con datos</li>
+        </ol>
+    </div>
+    
+    <div class="recursos">
+        <div class="recurso">
+            <h3>Datos Oficiales</h3>
+            <p>Enlaces a fuentes actualizadas</p>
+        </div>
+        <div class="recurso">
+            <h3>Video Tutorial</h3>
+            <p>"Dashboard Agropecuario en 10 pasos"</p>
+        </div>
+        <div class="recurso">
+            <h3>Plantilla Base</h3>
+            <p>Estructura inicial descargable</p>
+        </div>
+    </div>
+    
+    <div class="btn-volver">
+        <a href="index.html" class="btn">Volver al Inicio</a>
+    </div>
+</body>
+</html>

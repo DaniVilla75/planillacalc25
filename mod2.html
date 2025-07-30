@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2: Operaciones Básicas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f9ff;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #27ae60;
+            margin-top: 30px;
+            border-left: 5px solid #2ecc71;
+            padding-left: 10px;
+        }
+        
+        .objetivos {
+            background-color: #e8f8f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .concept-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        .analogia {
+            font-style: italic;
+            background-color: #e8f8f0;
+            padding: 10px;
+            border-left: 4px solid #2ecc71;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .actividad {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .paso {
+            margin-bottom: 10px;
+            counter-increment: step-counter;
+        }
+        
+        .paso::before {
+            content: counter(step-counter);
+            background-color: #27ae60;
+            color: white;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .formula {
+            font-family: monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .ejemplo {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+        
+        .consejo {
+            background-color: #d5f5e3;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #2ecc71;
+        }
+        
+        .error-comun {
+            background-color: #fdedec;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .recursos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .recurso {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            width: 28%;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .recurso {
+                width: 100%;
+            }
+        }
+        
+        .evaluacion {
+            background-color: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .faq {
+            margin: 20px 0;
+        }
+        
+        .pregunta {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .respuesta {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>➕ Módulo 2: Operaciones Básicas</h1>
+    
+    <div class="objetivos">
+        <h2>🎯 Objetivos de Aprendizaje</h2>
+        <p>Al finalizar este módulo, serás capaz de:</p>
+        <ol>
+            <li>Realizar operaciones aritméticas básicas en una planilla</li>
+            <li>Comprender y aplicar la sintaxis correcta de fórmulas</li>
+            <li>Utilizar paréntesis para controlar el orden de operaciones</li>
+            <li>Crear una tabla de gastos con cálculos automáticos</li>
+        </ol>
+    </div>
+    
+    <div class="consejo">
+        <strong>Conectando con lo aprendido:</strong> En el módulo 1 aprendiste la estructura básica. Ahora le añadiremos el poder del cálculo automático.
+    </div>
+    
+    <h2>🧮 Fundamentos de Fórmulas</h2>
+    
+    <div class="concept-box">
+        <h3>🔹 El símbolo = (el interruptor mágico)</h3>
+        <p>Toda fórmula en una planilla de cálculo debe comenzar con el signo <span class="formula">=</span>. Es como decirle a la planilla: "Lo que sigue es una operación que quiero que calcules".</p>
+        
+        <div class="analogia">
+            <strong>Analogía:</strong> "El símbolo = es como el botón de 'on' de una calculadora. Sin él, la planilla piensa que solo estás escribiendo texto normal."
+        </div>
+        
+        <div class="ejemplo">
+            <strong>Ejemplo:</strong><br>
+            Si escribes <span class="formula">5+3</span> en una celda, aparecerá exactamente "5+3"<br>
+            Pero si escribes <span class="formula">=5+3</span>, aparecerá el resultado: 8
+        </div>
+    </div>
+    
+    <h2>➗ Operaciones Aritméticas Básicas</h2>
+    
+    <table>
+        <tr>
+            <th>Operación</th>
+            <th>Símbolo</th>
+            <th>Ejemplo</th>
+            <th>Resultado</th>
+        </tr>
+        <tr>
+            <td>Suma</td>
+            <td>+</td>
+            <td class="formula">=A1+A2</td>
+            <td>Suma los valores de A1 y A2</td>
+        </tr>
+        <tr>
+            <td>Resta</td>
+            <td>-</td>
+            <td class="formula">=B1-B2</td>
+            <td>Resta B2 de B1</td>
+        </tr>
+        <tr>
+            <td>Multiplicación</td>
+            <td>*</td>
+            <td class="formula">=C1*C2</td>
+            <td>Multiplica C1 por C2</td>
+        </tr>
+        <tr>
+            <td>División</td>
+            <td>/</td>
+            <td class="formula">=D1/D2</td>
+            <td>Divide D1 entre D2</td>
+        </tr>
+    </table>
+    
+    <div class="error-comun">
+        <strong>Error común:</strong> Confundir el punto (.) con la coma (,) en decimales. En muchos programas, <span class="formula">=1.5+2.5</span> funciona pero <span class="formula">=1,5+2,5</span> puede dar error. Verifica la configuración regional de tu planilla.
+    </div>
+    
+    <h2>🔢 Orden de Operaciones</h2>
+    
+    <div class="concept-box">
+        <p>Las planillas siguen las mismas reglas matemáticas que aprendiste en la escuela. El orden es:</p>
+        <ol>
+            <li><strong>Paréntesis</strong>: Lo que está dentro se calcula primero</li>
+            <li><strong>Multiplicación y División</strong>: De izquierda a derecha</li>
+            <li><strong>Suma y Resta</strong>: De izquierda a derecha</li>
+        </ol>
+        
+        <div class="ejemplo">
+            <strong>Ejemplo comparativo:</strong><br>
+            <span class="formula">=5+3*2</span> → Primero 3*2=6, luego 5+6=<strong>11</strong><br>
+            <span class="formula">=(5+3)*2</span> → Primero 5+3=8, luego 8*2=<strong>16</strong>
+        </div>
+        
+        <div class="consejo">
+            <strong>Consejo profesional:</strong> Usa paréntesis incluso cuando no sean estrictamente necesarios. Hacen tus fórmulas más legibles y evitan errores.
+        </div>
+    </div>
+    
+    <div class="actividad">
+        <h2>✍️ Actividad Práctica: Tabla de Gastos Semanales</h2>
+        <p><strong>Objetivo:</strong> Crear una planilla que calcule automáticamente tus gastos diarios y el total semanal.</p>
+        
+        <div class="paso">Abre una nueva hoja de cálculo y nómbrala "Mis Gastos"</div>
+        <div class="paso">En la celda A1 escribe "Día", B1 "Gastos ($)"</div>
+        <div class="paso">Completa los días de la semana de A2 a A8 (Lunes a Domingo)</div>
+        <div class="paso">Ingresa gastos de ejemplo en B2 a B8 (ej: 15, 20, 10, etc.)</div>
+        <div class="paso">En A9 escribe "Total semanal:"</div>
+        <div class="paso">En B9 escribe la fórmula <span class="formula">=B2+B3+B4+B5+B6+B7+B8</span></div>
+        <div class="paso">Alternativa más eficiente: <span class="formula">=SUMA(B2:B8)</span> (lo aprenderás en el próximo módulo)</div>
+        <div class="paso">Aplica formato:
+            <ul>
+                <li>Negrita a los títulos</li>
+                <li>Color diferente a la fila de total</li>
+                <li>Formato de moneda a la columna B</li>
+            </ul>
+        </div>
+        
+        <div class="consejo">
+            <strong>Reto adicional:</strong>
+            <ul>
+                <li>Añade una columna "Descripción" para anotar en qué gastaste</li>
+                <li>Calcula el promedio diario con <span class="formula">=B9/7</span></li>
+                <li>Usa la función PROMEDIO: <span class="formula">=PROMEDIO(B2:B8)</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="evaluacion">
+        <h2>📝 Evaluación de Comprensión</h2>
+        <ol>
+            <li><strong>Ejercicio práctico:</strong> Crea una tabla que calcule el área de 3 rectángulos diferentes (base x altura)</li>
+            <li><strong>Pregunta conceptual:</strong> ¿Por qué es importante el símbolo = al inicio de una fórmula?</li>
+            <li><strong>Problema para resolver:</strong> Dada la fórmula <span class="formula">=10-2*3+4</span>, ¿cuál es el resultado correcto y por qué?</li>
+            <li><strong>Autoevaluación:</strong> Marca lo que lograste:
+                <ul style="list-style-type: none;">
+                    <li><input type="checkbox"> Puedo crear fórmulas con las 4 operaciones básicas</li>
+                    <li><input type="checkbox"> Entiendo cómo usar paréntesis para cambiar el orden de operaciones</li>
+                    <li><input type="checkbox"> Puedo crear una tabla con cálculos automáticos</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    
+    <h2>📚 Recursos Adicionales</h2>
+    <div class="recursos">
+        <div class="recurso">
+            <h3>Video Tutorial</h3>
+            <p>"Fórmulas Básicas en 5 Minutos"</p>
+        </div>
+        <div class="recurso">
+            <h3>Hoja de Referencia</h3>
+            <p>"Símbolos y Orden de Operaciones"</p>
+        </div>
+        <div class="recurso">
+            <h3>Plantilla Descargable</h3>
+            <p>"Calculadora de Gastos"</p>
+        </div>
+    </div>
+    
+    <h2>🤔 Preguntas Frecuentes</h2>
+    <div class="faq">
+        <div class="pregunta">Q: ¿Puedo sumar más de dos números en una sola fórmula?</div>
+        <div class="respuesta">R: ¡Claro! Puedes hacer <span class="formula">=A1+A2+A3+A4</span> o incluso <span class="formula">=10+20+30</span> directamente.</div>
+        
+        <div class="pregunta">Q: ¿Qué pasa si una celda referenciada está vacía?</div>
+        <div class="respuesta">R: La planilla la tratará como cero en operaciones matemáticas, pero ten cuidado porque esto puede distorsionar promedios.</div>
+        
+        <div class="pregunta">Q: ¿Cómo corrijo una fórmula con error?</div>
+        <div class="respuesta">R: Haz doble clic en la celda para editarla o selecciónala y pulsa F2. Los errores comunes son olvidar el = o referenciar celdas incorrectas.</div>
+    </div>
+    
+    <div class="consejo">
+        💡 <strong>Consejo Final:</strong> Practica modificando los números en tu tabla de gastos y observa cómo cambian automáticamente los resultados. ¡Así verás el verdadero poder de las planillas!
+    </div>
+</body>
+</html>
